@@ -45,7 +45,7 @@ def main():
     deploy_status = os.getenv("DEPLOY_STATUS", "n/a")
 
     lines = []
-    lines.append(f"# CI/CD/CT Report")
+    lines.append("# CI/CD/CT Report")
     lines.append("")
     lines.append(f"**Workflow:** {workflow}  ")
     lines.append(f"**Event:** {event}  ")
