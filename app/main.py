@@ -1,7 +1,7 @@
 
 import httpx
 from fastapi import FastAPI, HTTPException
-from .schemas import Item, ItemCre
+from .schemas import Item, ItemCreate
 
 
 
@@ -55,5 +55,5 @@ def create_app() -> FastAPI:
 
     return app
 
-# ASGI entrypoint for uvicorn
+
 app = create_app()
