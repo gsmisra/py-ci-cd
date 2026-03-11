@@ -62,7 +62,7 @@ jobs:
 
           # Wait up to ~30s for the app to come up
           for i in {1..30}; do
-            if curl -fsS "http://localhost:8000/hello" | grep -Fxq "Hello from Python-Docker"; then
+            if curl -fsS "http://localhost:8810/hello" | grep -Fxq "Hello from Python-Docker"; then
               echo "Endpoint working as expected"
               exit 0
             fi
@@ -71,7 +71,7 @@ jobs:
 
           echo "Smoke test failed"
           echo "Response was:"
-          curl -v "http://localhost:8000/hello" || true
+          curl -v "http://localhost:8810/hello" || true
           echo "Container logs:"
           docker logs "${CONTAINER}" || true
           exit 1
