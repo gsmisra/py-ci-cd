@@ -52,8 +52,8 @@ jobs:
         shell: bash
         run: |
           docker rm -f "${CONTAINER}" 2>/dev/null || true
-          # Map container port 8000 -> host port 8000
-          docker run -d --name "${CONTAINER}" -p 8000:8000 "${IMAGE}"
+          # Map container port 8810 -> host port 8810
+          docker run -d --name "${CONTAINER}" -p 8810:8810 "${IMAGE}"
 
       - name: Smoke test /hello
         shell: bash
