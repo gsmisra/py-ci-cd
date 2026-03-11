@@ -76,8 +76,8 @@ jobs:
           docker logs "${CONTAINER}" || true
           exit 1
 
-      - name: Cleanup container
-        if: always()
-        shell: bash
-        run: |
-          docker rm -f "${CONTAINER}" || true
+      # - name: Cleanup container
+      #   if: always()
+      #   shell: bash
+      #   run: |
+      #     docker rm -f "${CONTAINER}" || true
