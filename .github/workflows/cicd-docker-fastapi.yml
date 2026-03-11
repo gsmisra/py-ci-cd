@@ -1,17 +1,14 @@
 name: CI/CD (Docker FastAPI)
 
 on:
+  workflow_dispatch:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build_deploy_test:
-    # If you have a self-hosted runner label (like your earlier "cicd-runner"), keep this:
-    runs-on: [ "cicd-runner" ]
-    # If you DON'T have a self-hosted runner, replace with:
-    # runs-on: ubuntu-latest
+    runs-on: ["cicd-runner"]
 
-    # Needed to push images to GitHub Container Registry (GHCR)
     permissions:
       contents: read
       packages: write
@@ -82,8 +79,3 @@ jobs:
         shell: bash
         run: |
           docker rm -f "${CONTAINER}" || true
-
-
-
-
-
